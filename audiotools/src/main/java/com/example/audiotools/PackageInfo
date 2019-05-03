@@ -1,0 +1,13 @@
+调用方法
+String path=Environment.getExternalStorageDirectory().getAbsolutePath();
+AudioCodec audioCodec=AudioCodec.newInstance();
+audioCodec.setEncodeType(MediaFormat.MIMETYPE_AUDIO_MPEG);
+audioCodec.setIOPath(path + "/codec.aac", path + "/encode.mp3");
+audioCodec.prepare();
+audioCodec.startAsync();
+audioCodec.setOnCompleteListener(new AudioCodec.OnCompleteListener() {
+    @Override
+    public void completed() {
+        audioCodec.release();
+    }
+});

@@ -97,7 +97,6 @@ public class TranscoderActivity extends Activity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (mediaCodec.mIsRecording) {
                     mediaCodec.stop();
                     btn4.setText("开始");
